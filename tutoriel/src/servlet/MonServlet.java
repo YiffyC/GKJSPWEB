@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +34,7 @@ public class MonServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		faire(request, response);
+		
 	}
 
 	/**
@@ -43,7 +45,7 @@ public class MonServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void faire(HttpServletRequest request, HttpServletResponse response)
+	private void faire(HttpServletRequest request, HttpServletResponse response) throws IOException
 	{
 		
 		/* a la main moche 
@@ -72,8 +74,21 @@ public class MonServlet extends HttpServlet {
 			String key = params.nextElement();
 			System.out.println(key + ": " + request.getParameter(key));
 		}
+		redirection(request, response);
 		
-		
+	}
+	
+	
+	public void redirection(HttpServletRequest request, HttpServletResponse response) throws IOException
+	{
+		String url = "http://bthevenet.heb3.org";
+		response.sendRedirect(url);
+		/*
+		ServletOutputStream out = response.getOutputStream();
+		String url = "http://bthevenet.heb3.org";
+		response.setHeader("location", url);
+		out.println("");
+		*/
 		
 	}
 
