@@ -74,22 +74,15 @@ public class MonServlet extends HttpServlet {
 			String key = params.nextElement();
 			System.out.println(key + ": " + request.getParameter(key));
 		}
-		redirection(request, response);
+		
+		redirection("http://bthevenet.heb3.org", response);
 		
 	}
 	
 	
-	public void redirection(HttpServletRequest request, HttpServletResponse response) throws IOException
+	public void redirection(String url, HttpServletResponse response) throws IOException
 	{
-		String url = "http://bthevenet.heb3.org";
 		response.sendRedirect(url);
-		/*
-		ServletOutputStream out = response.getOutputStream();
-		String url = "http://bthevenet.heb3.org";
-		response.setHeader("location", url);
-		out.println("");
-		*/
-		
 	}
 
 }
