@@ -18,8 +18,8 @@ import beans.InformationBean;
 /**
  * Servlet implementation class MonServlet
  */
-@WebServlet("/MonServlet")
-public class MonServlet extends HttpServlet {
+@WebServlet("/MonServlet3")
+public class MonServlet3 extends HttpServlet {
 	
 	
 	
@@ -29,7 +29,7 @@ public class MonServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MonServlet() {
+    public MonServlet3() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -57,12 +57,17 @@ public class MonServlet extends HttpServlet {
 	
 	private void MisterBean(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		Enumeration<String> params =request.getParameterNames();
 		HttpSession session = request.getSession();
 		InformationBean bean = new InformationBean();
-		
-		bean.setNom("Mojo");
-		
-		System.out.println(bean.getNom());
+			
+		bean.setNom(request.getParameter("nom"));	
+		bean.setPrenom(request.getParameter("prenom"));
+		bean.setMail(request.getParameter("mail"));
+		bean.setMdp(request.getParameter("mdp"));
+		bean.setLogin(request.getParameter("login"));
+					
+
 		session.setAttribute("bean", bean);
 		RequestDispatcher rd = request.getRequestDispatcher("/resultat.jsp");
 		rd.forward(request, response);
@@ -72,7 +77,7 @@ public class MonServlet extends HttpServlet {
 	private void faire(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{		
 		System.out.println("entree faire");
-		Enumeration<String> params =request.getParameterNames();
+		//Enumeration<String> params =request.getParameterNames();
 		
 		//nouvelle session
 		HttpSession session = request.getSession(); //cree session

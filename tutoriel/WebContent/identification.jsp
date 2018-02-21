@@ -2,8 +2,7 @@
 <%@page import="com.formation.tools.DateUtil"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +13,7 @@
 <body>
 
 	<p>Bonjour, nous sommes le <font color="FF00FF"><i><%= DateUtil.returnDatelocale(new Date()) %> <i></i></i></font></p> 
-	<form name="identificationForm" method="post" action="MonServlet">
+	<form name="identificationForm" method="post" action="MonServlet3">
 		<table name="Formulaire">
 		<tr>
 			<td><b>Nom : </b></td>		<td><input type = "text" name="nom"></td>
