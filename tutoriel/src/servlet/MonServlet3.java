@@ -61,7 +61,7 @@ public class MonServlet3 extends HttpServlet {
 		HttpSession session = request.getSession();
 		InformationBean bean = new InformationBean();
 			
-		bean.setNom(request.getParameter("nom"));	
+		bean.setNom(request.getParameter("nom"));
 		bean.setPrenom(request.getParameter("prenom"));
 		bean.setMail(request.getParameter("mail"));
 		bean.setMdp(request.getParameter("mdp"));

@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>login</title>
 </head>
 <body>
+
+	<form action="/ServletLogin">
+	
+		<table>
+			<tr> <td>Login</td> <td><input type = "text" name="login"></td></tr>
+			<tr> <td>Mot de passe</td> <td><input type="password" name="mdp"></td></tr>
+		</table>
+	
+	<input type="submit">
+	</form>
 
 </body>
 </html>

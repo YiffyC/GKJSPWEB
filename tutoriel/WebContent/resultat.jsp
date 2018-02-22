@@ -8,16 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>Chargement page : ok</p>
+	<p>Identification reussie</p>
 	
 	<%
 		InformationBean bean = (InformationBean)session.getAttribute("bean");
-		out.println(bean.getNom());
-		out.println(bean.getPrenom());
-		out.println(bean.getMail());
-		out.println(bean.getMdp());
-		out.println(bean.getLogin());
 	%>
-
+	<p>Nom : <%out.println(bean.getNom()); %></p>
+	<p>Prenom : <%out.println(bean.getPrenom()); %></p>
+	<p>Login : <%out.println(bean.getLogin()); %></p>
+	<p>Mot de passe : <%out.println(bean.getMdp()); %></p>
 </body>
 </html>

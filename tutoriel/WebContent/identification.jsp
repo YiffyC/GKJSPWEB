@@ -1,4 +1,5 @@
 <%@page import="servlet.MonServlet"%>
+<%@page import="beans.InformationBean"%>
 <%@page import="com.formation.tools.DateUtil"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -10,13 +11,18 @@
 <title>identification</title>
 </head>
 
+		<%
+			InformationBean bean = (InformationBean)session.getAttribute("bean");
+		
+		%>
+
 <body>
 
 	<p>Bonjour, nous sommes le <font color="FF00FF"><i><%= DateUtil.returnDatelocale(new Date()) %> <i></i></i></font></p> 
 	<form name="identificationForm" method="post" action="MonServlet3">
 		<table name="Formulaire">
 		<tr>
-			<td><b>Nom : </b></td>		<td><input type = "text" name="nom"></td>
+			<td><b>Nom : </b></td>		<td><input type = "text" name="nom"  ></td>
 		</tr>
 	
 		<tr>
@@ -28,11 +34,11 @@
 		</tr>
 	
 		<tr>
-			<td><b>Login :</b></td>		<td><input type = "text" name="login"></td>
+			<td><b>Login :</b></td>		<td><input type = "text"  readonly="readonly" name="login" value="<%= bean.getLogin() %>"></td>
 		</tr>
 	
 		<tr>
-			<td><b>Mdp :</b></td>		<td><input type="password" name="mdp"></td>
+			<td><b>Mdp :</b></td>		<td><input type="password" name="mdp" readonly="readonly" value="<%= bean.getMdp() %>"></td>
 		</tr>
 	
 		</table>
