@@ -25,7 +25,7 @@
 	<jsp:getProperty property="date" name="dateBean"/>
 	
 	
-	<p>Bonjour <font color="FF00FF"><%= bean.getLogin() %></font>, nous sommes le <font color="FF00FF"><i><%= DateUtil.returnDatelocale(new Date()) %> <i></font></p> 
+	<p>Bonjour <font color="FF00FF"><%= bean.getLogin() %></font></p> 
 	<form name="identificationForm" method="post" action="MonServlet3">
 		<table name="Formulaire">
 		<tr>
