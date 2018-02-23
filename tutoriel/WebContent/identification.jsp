@@ -6,10 +6,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>identification</title>
 </head>
+<%@ include file="header.html" %>
 
 		<%
 			InformationBean bean = (InformationBean)session.getAttribute("bean");
@@ -18,7 +20,12 @@
 
 <body>
 
-	<p>Bonjour, nous sommes le <font color="FF00FF"><i><%= DateUtil.returnDatelocale(new Date()) %> <i></i></i></font></p> 
+
+	<jsp:useBean id="dateBean" class="com.formation.tools.DateUtil"></jsp:useBean>
+	<jsp:getProperty property="date" name="dateBean"/>
+	
+	
+	<p>Bonjour <font color="FF00FF"><%= bean.getLogin() %></font>, nous sommes le <font color="FF00FF"><i><%= DateUtil.returnDatelocale(new Date()) %> <i></font></p> 
 	<form name="identificationForm" method="post" action="MonServlet3">
 		<table name="Formulaire">
 		<tr>
@@ -46,5 +53,5 @@
 	<input type="submit" value=":)" >
 	</form>
 </body>
-
+	<%@ include file="footer.html" %>
 </html>

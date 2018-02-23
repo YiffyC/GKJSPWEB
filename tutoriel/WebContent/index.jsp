@@ -15,7 +15,9 @@
 			SimpleDateFormat formater = new SimpleDateFormat( "dd/MM/yyyy H:mm:ss" );
 			String s = formater.format(d);
 		%>
-
-		Bonjour, nous sommes le <font color="blue"> <%= s %> </font> et vous êtes formés par Sylvain LALLIER 
+		
+		Bonjour, nous sommes le <font color="blue"> <%= s %> </font>.
+		<br />
+		<a href="login.jsp"><button style="background-color:black; color:white">Log toi!</button></a>
 	</body>
 </html>

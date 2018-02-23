@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<%@ include file="header.html" %>
 <body>
 	<p>Identification reussie</p>
 	
@@ -18,4 +19,5 @@
 	<p>Login : <%out.println(bean.getLogin()); %></p>
 	<p>Mot de passe : <%out.println(bean.getMdp()); %></p>
 </body>
+<%@ include file="footer.html" %>
 </html>

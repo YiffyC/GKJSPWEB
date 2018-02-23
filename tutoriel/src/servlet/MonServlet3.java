@@ -69,7 +69,7 @@ public class MonServlet3 extends HttpServlet {
 					
 
 		session.setAttribute("bean", bean);
-		RequestDispatcher rd = request.getRequestDispatcher("/resultat.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/resultatUseban.jsp");
 		rd.forward(request, response);
 		
 	}
@@ -104,7 +104,7 @@ public class MonServlet3 extends HttpServlet {
 		
 		System.out.println(bean.getNom());
 		session.setAttribute("bean", bean);
-		RequestDispatcher rd = request.getRequestDispatcher("/resultat.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/resultatUseban.jsp");
 		rd.forward(request, response);
 		
 	}

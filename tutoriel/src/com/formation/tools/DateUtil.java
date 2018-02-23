@@ -6,17 +6,25 @@ import java.util.Date;
 
 public class DateUtil {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Date d = new Date();
-		System.out.println(returnDatelocale(d));
-		
+	String date;
+	
+	
+	public void Dateutil()
+	{
+		date = null;
 	}
 	
-	public static String returnDatelocale(Date d)
+	
+	public  String returnDatelocale(Date d)
 	{
 		SimpleDateFormat formater = new SimpleDateFormat( "dd/MM/yyyy H:mm:ss" ); 
 		return formater.format(d); 
 	}
 
+	public String getDate()
+	{
+		return returnDatelocale(new Date());
+	}
+
+	
 }
